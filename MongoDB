@@ -1,0 +1,18 @@
+use GeneralMDB
+db.createCollection("customer")
+db.createCollection("items")
+db.customer.insert(
+    "customer_data" :
+    [
+        {"firstname" : "Bruce","lastname" : "Wayne",},
+        {"firstname" : "Clark","lastname" : "Kent",},
+        {"firstname" : "Tony","lastname" : "Stark",}
+        ])
+
+db.items.insert(
+    "items_data" :
+    [
+        {"title" : "USM","price" : 10.2,},
+        {"title" : "Mouse","price" : 12.23,},
+        {"title" : "Monitor","price" : 199.99,}
+        ])

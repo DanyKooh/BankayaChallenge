@@ -1,0 +1,73 @@
+1. El data engineering se encarga de la administración, diseño,desarrollo y procesamiento de  grandes 
+volumnes de datos con el fin de que se puedan realizar analisis de inteligencia, desarrollo de visualizaciones e
+incluso modelos de machine learning o data scientists, desde mi experiencia se tiene que mantener 
+un uso adeauado de los datos sencibles y administrarlos adecuadamente, también necesitan habilidades
+para la arquitectura porque se necesitan diseñar modelos de bases de datos para datos estructurados 
+y no estructurados que sean optimos para el desarrollo de la solución dependiendo del caso de uso.
+Hay algunas skills que forman la base de la ingenieria de datos, como son el conocimiento de 
+lenguajes de programación que son optimizados para bases de datos como R o Spark Scala, aunque
+es importante mencionar que otros lenguajes como python o pyspark tienen librerias dedicadas a la
+manipulación de bases de datos, también esxiste el correcto desarrollo de visión sobre los modelos
+y arquitectura de bases de datos para poder generar correctos procesos ETL o ELT.
+
+2. Las principales responsabilidades del ingeniero de datos:
+Limpieza y manipulación de datos de diferentes fuentes de datos en formatos que puedan ser fácilmente utilizados por los científicos de datos y otros consumidores de datos.
+Desarrollo de herramientas de datos y API para el análisis de datos.
+Despliegue y supervisión de algoritmos de aprendizaje automático y métodos estadísticos en entornos de producción.
+Se encargan de construir flujos de datos en tiempo real y pipelines de procesamiento de datos. 
+Deben dominar al menos un lenguaje de programación para crear soluciones de software a los desafíos de los datos. 
+Evalúan una los requisitos y aplican las técnicas de bases de datos pertinentes para crear una arquitectura sólida.
+Aplican métodos para mejorar la fiabilidad y la calidad de los datos. 
+Construyen conductos de datos que se utilizan para transportar los datos desde una fuente de datos a un almacén de datos. 
+Encontrar patrones ocultos a partir de los datos
+Utilizar los datos para descubrir las tareas que se pueden automatizar
+
+
+3. Un proceso ETL consiste en extraer información de una o varias fuentes de datos los cuales pueden
+ser datos estructurados, semiestructurados o no estructurados, para luego hacer una serie de procesos 
+como limpieza de datos, transformación de datos (añadir columnas, columnas calculadas, data mining,
+union de tablas, entre muchas otra cosas), posteriormente estos datos son cargados en una base de datos
+o en un DWH para tenerlos en un solo destino y pueda ser consumido para otros propositos.
+
+4. Desde mi experiencia existen diferentes tecnologias para crear pipelines, sien embargo, me gustaria 
+explicar el procedimiento que empleo desde la nube de azure.
+Existen 2 plataformas que se usan comunmente para la creación de pipelines, Azure Data Factory y Azure
+Synanpse Analitics. 
+Para un creacion de pipeline dentro del synapse studio se genera y configura el pipeline correspondiente
+se le asigna una tarea para ejecutar y se genera un trigger para que ejecuta las tareas en el tiempo que 
+se solicite. Es importante decir que esta pipeline a su vez puede llamar otras pipelines con tareas diferentes.
+
+5. Es muy importante tener en cuenta para las consultas el comando Join ya que es la manera en que puedes 
+conectar las tablas de dimensiones y hechos entre si, lo cual es muy importante para crear views y querys 
+necesarias para la extracción de información.
+
+6. Es importante que las pipelines tengan una manera efectiva de ejecutarse ciclicamente o un metodo de 
+automatización, tambien debe ser escalable.
+
+7. Un pipeline montado desde Azure Synapse Analitics puede ser monitoriado desde la plataforma ya que tiene
+integrado en Azure monitor que es donde se lleva un historial de los pipelines ejecutados, asi como si fueron
+exitosos o hubo algun fallo, si algo fallo te da una descripción de todas las tareas ejecutadas y el log de 
+los errores. Por otro lado, si el pipeline es generado a través de un proyecto en algún lenguaje de programación 
+se puede implementar logs dentro del codigo que nos ayuden a identificar cuando las tareas sean ejecutadas 
+adecuadamente o tenga algun fallo. También es importante tener una constante supervisión de los procesos.
+
+8. Mayormente las bases de datos no relacionales o NoSQL se usan para información tipo imagenes, documentos
+PDF, audios o videos, por ejemplo si tenemos un sistema o app que recolecta información de clientes para 
+crear un historial, donde compartes scans de sus datos personales como INE, CURP, RFC, entre otros, al ser 
+archivos PDF o imagenes se usaria una base NoSQL, que seria mas optimo.
+
+9. Autodidacta: debido a que es necesario estar aprendiendo constantemente nuevas tecnologias o nuevas formas
+de optimización, asi como lenguajes de programación.
+Pensamiento logico-analitico: Es necesario para el correcto diseño de soluciónes de arquitectura y procesos de
+ingenieria de datos.
+Confianza: Es importante tener un sentido de la responsabilidad y confianza ya que en muechas ocasiones 
+manejamos datos sensibles y en necesario mantener en confidencialidad los datos que se manejan. Igual es 
+necesario tener una metología de data governance.
+
+10. Imagen en el repositorio con el nombre de Diagrama.
+
+11. Los sistemas OLAP sirven para alamcenar grandes volumenes de datos de diferentes origenes de datos,
+por lo que necesitan mayor espacio para poder guardar datos historicos, e incluso los sistemas OLAP pueden 
+tener conectadas diferentes fuentes OLTP que son transaccionales, es decir, sus fuentes de datos son datos 
+operativos actuales, y ayudan a procesar estas de manera mucho mas rapida como es el caso de los bancos y 
+ventas que usan el sistema OLTP.
